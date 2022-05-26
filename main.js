@@ -1,5 +1,4 @@
-// Jangan di ubah nanti error!
-
+// hehe di ubah 😅☝️
 require('./config.js')
 const { WAConnection: _WAConnection } = require('@adiwajshing/baileys')
 const cloudDBAdapter = require('./lib/cloudDBAdapter')
@@ -44,7 +43,8 @@ global.DATABASE = global.db // Backwards Compatibility
 
 global.conn = new WAConnection()
 conn.version = [2, 2140, 12]
-let authFile = `${opts._[0] || 'session'}.data.json`
+conn.browserDescription =['Jarot X Zifa', 'Safari', '3.5'] // mau ngapain ya ??
+let authFile = `${opts._[0] || 'session'}.json`
 if (fs.existsSync(authFile)) conn.loadAuthInfo(authFile)
 if (opts['trace']) conn.logger.level = 'trace'
 if (opts['debug']) conn.logger.level = 'debug'
@@ -127,8 +127,8 @@ global.reloadHandler = function () {
     conn.off('group-update', conn.onGroupUpdate)
     conn.off('CB:action,,call', conn.onCall)
   }
-  conn.welcome = '══════◄ 𝐘𝐀𝐏𝐒 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 @user 𝐃𝐈 @subject ►══════'
-  conn.bye = '══════◄ 𝐘𝐀𝐇 𝐊𝐎𝐊 𝐎𝐔𝐓 𝐒𝐈𝐇 @user ? 𝐌𝐄𝐍𝐓𝐀𝐋 𝐀𝐌𝐀𝐍𝐊𝐀𝐍 ►══════'
+  conn.welcome = '► 𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝗠𝗲𝘀𝘀𝗮𝗻𝗴𝗲\n Hi @user, Welcome To *@subject*\n@desc' // hehe
+  conn.bye = '► 𝗟𝗲𝗮𝘃𝗲 𝗠𝗲𝘀𝘀𝗮𝗴𝗲\n@user keluar karena ingin keluar' // hehe
   conn.spromote = 'yaelah,Kenapa lu harus admin sih @user ?'
   conn.sdemote = 'yah gak admin lagi tu sih @user'
   conn.handler = handler.handler
